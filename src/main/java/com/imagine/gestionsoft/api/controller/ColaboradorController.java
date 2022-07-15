@@ -23,6 +23,12 @@ public class ColaboradorController {
 	private IColaboradorService colaboradorService;
 
 	@GetMapping(path = "{id}")
+	public ResponseEntity<ColaboradorDto> obtenerColaborador(@PathVariable Integer id) {
+		ColaboradorDto resp = colaboradorService.obtenerColaborador(id);
+		return ResponseEntity.ok(resp);
+	}
+	
+	@GetMapping(path = "/negocio/{id}")
 	public ResponseEntity<List<ColaboradorDto>> obtenerColaboradoresNegocio(@PathVariable Integer id) {
 		List<ColaboradorDto> resp = colaboradorService.obtenerColaboradoresNegocio(id);
 		return ResponseEntity.ok(resp);
