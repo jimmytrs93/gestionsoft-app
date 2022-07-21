@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.imagine.gestionsoft.core.dto.ClienteDto;
@@ -22,9 +23,9 @@ public class ClienteController {
 	@Autowired
 	private IClienteService clienteService;
 
-	@GetMapping(path = "{id}")
-	public ResponseEntity<ClienteDto> obtenerCliente(@PathVariable Integer id) {
-		ClienteDto resp = clienteService.obtenerCliente(id);
+	@GetMapping
+	public ResponseEntity<ClienteDto> obtenerCliente(@RequestParam Integer cliente, @RequestParam Integer negocio) {
+		ClienteDto resp = clienteService.obtenerClienteNegocio(cliente, negocio);
 		return ResponseEntity.ok(resp);
 	}
 
