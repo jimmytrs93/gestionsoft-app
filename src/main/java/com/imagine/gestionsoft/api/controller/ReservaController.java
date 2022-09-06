@@ -43,7 +43,6 @@ public class ReservaController {
 		criterialDto.setClienteId(cliente);
 		criterialDto.setColaboradorId(colaborador);
 		criterialDto.setEfectiva(efectiva);
-		criterialDto.setEstado(efectiva);
 		criterialDto.setFechaCreacionFin(fechaCreaFin);
 		criterialDto.setFechaCreacionFin(fechaCreaIni);
 		criterialDto.setFechaFin(fechaFin);
