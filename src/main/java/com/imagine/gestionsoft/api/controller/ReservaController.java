@@ -50,6 +50,8 @@ public class ReservaController {
 		criterialDto.setFechaIni(fechaIni);
 		criterialDto.setItemId(item);
 		criterialDto.setObservacion(observacion);
+		criterialDto.setNegocioId(negocio);
+		criterialDto.setEstado(estado);
 
 		List<ReservaDto> dtos = iReservaService.obtenerReservasCriterios(criterialDto);
 
